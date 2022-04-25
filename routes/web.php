@@ -14,7 +14,10 @@
 Auth::routes();
 
 
-//Route::view('/', 'auth.login');
+Route::get('/', function () {
+    return redirect('/user');
+  });
+  
 
 Route::get('/logout', function(){
 	Auth::Logout();
