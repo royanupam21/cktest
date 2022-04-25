@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Admin;
+use App\Models\User;
 use App\Models\Testimonial;
 use Intervention\Image\ImageManagerStatic as Image;
 use Auth;
@@ -145,7 +146,7 @@ class AdminController extends Controller
 
     public function users()
     {
-        $datas=Admin::orderBy('id', 'desc')->paginate(25);
+        $datas=User::orderBy('id', 'desc')->paginate(25);
         return view('admin.user.manage',compact('datas'));
     }
 

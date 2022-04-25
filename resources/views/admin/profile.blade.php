@@ -59,7 +59,7 @@
 									<div class="form-group">
 					                    <label class="col-md-12 control-label">Name</label>
 					                    <div class="col-md-12">
-					                      <input type="text" class="form-control input-sm" value="{{$datas->first_name.' '.$datas->last_name}}">
+					                      <input type="text" class="form-control input-sm" value="{{$datas->fname.' '.$datas->lname}}">
 					                    </div>
 					                 </div>
 								</div>

@@ -21,11 +21,11 @@
 		<div class="page-header">
 			<div class="row align-items-center">
 				<div class="col">
-					<h3 class="page-title">View Team/Users Info
+					<h3 class="page-title">View Users Info
 					</h3>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#index.html">Home</a></li>
-						<li class="breadcrumb-item active">Team/Users Info</li>
+						<li class="breadcrumb-item active">Users Info</li>
 					</ul>
 				</div>
 			</div>
@@ -36,9 +36,8 @@
 
 				<div class="card card-table">
 					<div class="card-header">
-						<h4 class="card-title">List of Team/Users</h4>
+						<h4 class="card-title">List of Users</h4>
 
-						<a href="#" class="btn btn-sm btn-success float-right" id="createPage"><i class="fa fa-plus"></i> Add Profile</a>
 					</div>
 
 					<div class="card-body" style="padding-bottom: 20px;">
@@ -49,8 +48,6 @@
 										<th>Action</th>
 										<th>Name</th>
 										<th>Email</th>
-										<th>Phone</th>
-										<th>Published?</th>
 										<th>Created On</th>
 									</tr>
 								</thead>
@@ -64,16 +61,14 @@
 										    <i class="fa fa-gear"></i>
 										  </button>
 										  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										    <a class="dropdown-item btnUserView" id="btnUserView_{{$data->id}}" href="#"><i class="fa fa-bookmark"></i> View</a>
-										    <a class="dropdown-item btnUserEdit" id="btnUserEdit_{{$data->id}}" href="#"><i class="fa fa-edit"></i> Edit</a>
-										    <a class="dropdown-item confirmation deleteUsers" href="{{url('admin/deleteUsers/'.$data->id)}}" id="deleteUsers_{{$data->id}}"><i class="fa fa-trash"></i> Delete</a>
+										    <a class="dropdown-item" id="btnUserView_{{$data->id}}" href="#"><i class="fa fa-bookmark"></i> View</a>
+										    <a class="dropdown-item" id="btnUserEdit_{{$data->id}}" href="#"><i class="fa fa-edit"></i> Edit</a>
+										    <a class="dropdown-item confirmation" href="#{{url('admin/deleteUsers/'.$data->id)}}" id="deleteUsers_{{$data->id}}"><i class="fa fa-trash"></i> Delete</a>
 										  </div>
 										</div>	
 										</td>
-										<td>{{$data->first_name." ".$data->last_name}}</td>
+										<td>{{$data->fname." ".$data->lname}}</td>
 										<td>{{$data->email}}</td>
-										<td>{{($data->phone=="")?'-NA-':$data->phone}}</td>
-										<td>{{($data->isactive==1)?'-Published-':'-Not Published-'}}</td>
 										<td>{{date_format(date_create($data->craeted_at),"d-m-Y")}}</td>
 									</tr>
 									@endforeach
